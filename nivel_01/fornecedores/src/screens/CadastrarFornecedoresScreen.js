@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import {
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
 import { adicionaDados } from "../salvaDados/FuncoesDados.js";
 
 function CadastrarFornecedoresScreen() {
@@ -10,7 +16,8 @@ function CadastrarFornecedoresScreen() {
   const [imagem, setImagem] = useState("");
   const [categoria, setCategoria] = useState("");
 
-  return <View style={styles.container}>
+  return (
+    <ScrollView style={styles.container}>
       <Text style={styles.heading}>Cadastrar Fornecedores</Text>
       <TextInput
         style={styles.input}
@@ -48,14 +55,26 @@ function CadastrarFornecedoresScreen() {
         onChangeText={(text) => setImagem(text)}
         Defaultvalue={imagem}
       />
-      <TouchableOpacity title="Cadastrar" onPress={async() => {
-        const lista = {"imagem": `${imagem}`, "nome": `${nome}`, "telefone": `${telefone}`, "email": `${email}`, "endereco": `${endereco}`, "categoria": `${categoria}`}
-        await adicionaDados(lista)
-      }} style={styles.button}>
+      <TouchableOpacity
+        title="Cadastrar"
+        onPress={async () => {
+          const lista = {
+            imagem: `${imagem}`,
+            nome: `${nome}`,
+            telefone: `${telefone}`,
+            email: `${email}`,
+            endereco: `${endereco}`,
+            categoria: `${categoria}`,
+          };
+          await adicionaDados(lista);
+        }}
+        style={styles.button}
+      >
         <Text style={styles.botaoTexto}>Cadastrar</Text>
       </TouchableOpacity>
-    </View>
-};
+    </ScrollView>
+  );
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -65,27 +84,27 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 32,
     fontWeight: "bold",
-    marginBottom: '15%',
+    marginBottom: "15%",
   },
   input: {
-    width: '80%',
+    width: "80%",
     padding: 10,
     borderColor: "gray",
     borderRadius: 10,
     borderWidth: 2,
-    marginBottom: '10%',
+    marginBottom: "10%",
   },
   button: {
-    backgroundColor: 'grey',
+    backgroundColor: "grey",
     width: "80%",
     padding: 15,
     borderRadius: 10,
     marginTop: 10,
   },
   botaoTexto: {
-    color: '#FFF', 
-    textAlign:'center',
-    fontSize: 20
-  }
+    color: "#FFF",
+    textAlign: "center",
+    fontSize: 20,
+  },
 });
 export default CadastrarFornecedoresScreen;
