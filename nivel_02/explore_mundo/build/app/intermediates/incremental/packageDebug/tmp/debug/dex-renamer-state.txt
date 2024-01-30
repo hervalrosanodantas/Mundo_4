@@ -1,0 +1,4 @@
+#Mon Jan 29 18:07:25 BRT 2024
+base.0=E\:\\faculdade_estacio_de_sa\\trabalhos_faculdade\\Mundo_4\\nivel_02\\explore_mundo\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
