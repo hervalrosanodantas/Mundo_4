@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DomaApp</string>
+    <string name="addTksBtn">+</string>
+    <string name="tskEdiText">Digite sua tarefa</string>
+    <string name="cnfBtn">Adicionar</string>
+
+</resources>
